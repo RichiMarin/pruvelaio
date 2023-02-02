@@ -6,13 +6,22 @@
         </div>
         <div class="card-body p-4">
 
-            <label style="float: left;">Email</label>
-            <input class="form-control m-2" type="email" placeholder="Ingrese email" [(ngModel)]="usuario.email">
+            <form autocomplete="off"
+                  [formGroup]="miFormulario"
+                  (ngSubmit)="login()">
 
-            <label style="float: left;">Password</label>
-            <input class="form-control m-2" type="password" placeholder="Ingrese password" [(ngModel)]="usuario.password">
+                <label style="float: left;">Email</label>
+                <input class="form-control m-2" type="email" 
+                       formControlName="email" placeholder="Ingrese email">
 
-            <button class="btn btn-primary btn-block m-2" (click)="Ingresar()">Ingresar</button>
+                <label style="float: left;">Password</label>
+                <input class="form-control m-2" type="password" 
+                       formControlName="password" placeholder="Ingrese password">
+
+                <button class="btn btn-primary btn-block m-2" 
+                        type="submit" [disabled]="miFormulario.invalid">Ingresar</button>
+            
+            </form>
 
         </div>
     </div>

@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './assets/footer/footer.component';
 import { NavbarComponent } from './assets/navbar/navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,

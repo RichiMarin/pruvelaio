@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modulos/login/login/login.component';
+import { LoginModule } from './modulos/login/login.module';
+
 
 // Carga de rutas generales y loadchildren (Rutas hijas), carga perezosa lazyload
 
@@ -25,6 +27,9 @@ const routes: Routes = [
     path: 'noticias',
     loadChildren: () => import('./modulos/noticias/noticias.module').then(m => m.NoticiasModule)
   },{
+    path: 'logout',
+    loadChildren: () => import('./modulos/logout/logout.module').then(m => m.LogoutModule)
+    },{
     path:'**',
     redirectTo: 'login'
   }
